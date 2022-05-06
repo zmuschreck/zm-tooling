@@ -52,3 +52,6 @@ $Packages = 'az.powershell',
                 choco install $PackageName -y
             }
         }
+        
+       Add-PoshGitToProfile
+       
