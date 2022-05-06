@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: hallo
+spec:
+ template:
+ # Dies is the Pod Vorlage
+ spec:
+ containers:
+ - name: hallo
+ image: busybox
+ command: ['sh', '-c', 'echo "Hallo, Zukunftsmotor!" && sleep 3600']
+ restartPolicy: OnFailure
+ # Die Pod Vorlage endet hier
