@@ -33,7 +33,9 @@ $Packages = 'az.powershell',
             'poshgit',
             'powershell-core',
             'terraform',
-            'vscode'
+            'vscode',
+            'microsoft-windows-terminal'
+            
             
         If(Test-Path -Path "$env:ProgramData\Chocolatey") {
         # Pakete aus $Packages installieren
@@ -52,6 +54,8 @@ $Packages = 'az.powershell',
                 choco install $PackageName -y
             }
         }
-        
+       
+       Refreshenv
+       choco feature enable -n allowGlobalConfirmation 
        Add-PoshGitToProfile
        
